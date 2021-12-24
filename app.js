@@ -180,3 +180,16 @@ class SuperheroEntry {
 // the superhero list class
 
 class SuperheroList {}
+
+// -=-=-=--=--=-=-=-=-=-=-=-=-=-=-=-=-===-- EVENTS =-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+const form = document.querySelector(".superhero-form");
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  let [superheroName, superheroUniverse, superheroPower] = [
+    document.querySelector("#name").value,
+    document.querySelector("#universe").value,
+    document.querySelector("#power").value,
+  ];
+});
