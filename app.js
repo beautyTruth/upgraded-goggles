@@ -167,3 +167,16 @@
 /*
 my code below
 */
+
+// the superhero entry class
+class SuperheroEntry {
+  constructor(superheroName, superheroUniverse, superheroPower) {
+    this.superheroName = superheroName;
+    this.superheroUniverse = superheroUniverse;
+    this.superheroPower = superheroPower;
+  }
+}
+
+// the superhero list class
+
+class SuperheroList {}
