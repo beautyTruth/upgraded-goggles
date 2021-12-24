@@ -182,7 +182,7 @@ class SuperheroEntry {
 class SuperheroList {
   addSuperhero(entry) {
     const listData = document.querySelector(".superhero-list-data");
-    const listContainer = document.createElement(ul);
+    const listContainer = document.createElement("ul");
     listContainer.setAttribute("id", "list");
 
     listContainer.innerHTML += `
@@ -191,13 +191,23 @@ class SuperheroList {
     <li>${entry.superheroPower}</li>
     <i class="fas fa-trash"></i>
     `;
+
+    listData.appendChild(listContainer);
+  }
+
+  clearSuperheroInputs() {
+    [
+      document.querySelector("#name").value,
+      document.querySelector("#universe").value,
+      document.querySelector("#power").value,
+    ] = ["", "", ""];
   }
 }
 
 // -=-=-=--=--=-=-=-=-=-=-=-=-=-=-=-=-===-- EVENTS =-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 const form = document.querySelector(".superhero-form");
-form.addEventListener("submit", (e) => {
+form.addEventListener("submit", function (e) {
   e.preventDefault();
 
   let [superheroName, superheroUniverse, superheroPower] = [
@@ -218,5 +228,6 @@ form.addEventListener("submit", (e) => {
   const list = new SuperheroList();
 
   list.addSuperhero(entry);
-  console.log(list);
+  list.clearSuperheroInputs();
+  console.log(entry);
 });
