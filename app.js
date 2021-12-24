@@ -227,7 +227,19 @@ form.addEventListener("submit", function (e) {
   // instantiating the superhero list
   const list = new SuperheroList();
 
-  list.addSuperhero(entry);
-  list.clearSuperheroInputs();
-  console.log(entry);
+  // validation of the form if one or more of the input fields is empty
+
+  if (
+    superheroName === "" ||
+    superheroUniverse === "" ||
+    superheroPower === ""
+  ) {
+    list.validationError();
+  } else {
+    list.addSuperhero(entry);
+    list.clearSuperheroInputs();
+    list.validationSuccess();
+  }
+
+  console.log(list);
 });
