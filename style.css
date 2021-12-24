@@ -97,9 +97,9 @@ input[type="text"] {
   padding: 15px;
 }
 
-h2:last-child {
+/* h2:last-child {
   opacity: 0;
-}
+} */
 
 .superhero-list-header,
 .superhero-list-data {
