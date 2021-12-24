@@ -180,7 +180,18 @@ class SuperheroEntry {
 // the superhero list class
 
 class SuperheroList {
-  // addSuperhero(entry)
+  addSuperhero(entry) {
+    const listData = document.querySelector(".superhero-list-data");
+    const listContainer = document.createElement(ul);
+    listContainer.setAttribute("id", "list");
+
+    listContainer.innerHTML += `
+    <li>${entry.superheroName}</li>
+    <li>${entry.superheroUniverse}</li>
+    <li>${entry.superheroPower}</li>
+    <i class="fas fa-trash"></i>
+    `;
+  }
 }
 
 // -=-=-=--=--=-=-=-=-=-=-=-=-=-=-=-=-===-- EVENTS =-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
