@@ -179,7 +179,9 @@ class SuperheroEntry {
 
 // the superhero list class
 
-class SuperheroList {}
+class SuperheroList {
+  // addSuperhero(entry)
+}
 
 // -=-=-=--=--=-=-=-=-=-=-=-=-=-=-=-=-===-- EVENTS =-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
@@ -192,4 +194,18 @@ form.addEventListener("submit", (e) => {
     document.querySelector("#universe").value,
     document.querySelector("#power").value,
   ];
+
+  // console.log(superheroName, superheroUniverse, superheroPower);
+  // Instantiating the supehero entry class
+  const entry = new SuperheroEntry(
+    superheroName,
+    superheroUniverse,
+    superheroPower
+  );
+
+  // instantiating the superhero list
+  const list = new SuperheroList();
+
+  list.addSuperhero(entry);
+  console.log(list);
 });
