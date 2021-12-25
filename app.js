@@ -234,6 +234,13 @@ class StoreSuperhero {
     }
     return superheroes;
   }
+
+  static addSuperhero(entry) {
+    const superheroesList = StoreSuperhero.getSuperhero();
+
+    superheroesList.push(entry);
+    localStorage.setItem("superheroes", JSON.stringify(superheroesList));
+  }
 }
 
 // -=-=-=--=--=-=-=-=-=-=-=-=-=-=-=-=-===-- EVENTS =-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
