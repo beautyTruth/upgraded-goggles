@@ -224,6 +224,18 @@ class SuperheroList {
   }
 }
 
+class StoreSuperhero {
+  static getSuperhero() {
+    let superheroes;
+    if (localStorage.getItem("superheroes") === null) {
+      superheroes = [];
+    } else {
+      superheroes = JSON.parse(localStorage.getItem("superheroes"));
+    }
+    return superheroes;
+  }
+}
+
 // -=-=-=--=--=-=-=-=-=-=-=-=-=-=-=-=-===-- EVENTS =-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 const form = document.querySelector(".superhero-form");
@@ -259,6 +271,9 @@ form.addEventListener("submit", function (e) {
     list.addSuperhero(entry);
     list.clearSuperheroInputs();
     list.validationSuccess();
+
+    // add the superhero to local storage
+    StoreSuperhero.addSuperhero(entry);
   }
 
   console.log(list);
