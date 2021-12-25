@@ -263,3 +263,13 @@ form.addEventListener("submit", function (e) {
 
   console.log(list);
 });
+
+// deleting
+
+const listData = document.querySelector(".superhero-list-data");
+listData.addEventListener("click", (e) => {
+  if (e.target.className === "fas fa-trash") {
+    const trashy = e.target.parentNode;
+    trashy.remove();
+  }
+});
