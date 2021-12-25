@@ -241,9 +241,21 @@ class StoreSuperhero {
     superheroesList.push(entry);
     localStorage.setItem("superheroes", JSON.stringify(superheroesList));
   }
+
+  static displaySuperhero() {
+    const superheroesList = StoreSuperhero.getSuperhero();
+
+    superheroesList.forEach(function (superhero) {
+      // instantiating the SuperheroList class
+      const list = new SuperheroList();
+      list.addSuperhero(superhero);
+    });
+  }
 }
 
 // -=-=-=--=--=-=-=-=-=-=-=-=-=-=-=-=-===-- EVENTS =-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+document.addEventListener("DOMContentLoaded", StoreSuperhero.displaySuperhero);
 
 const form = document.querySelector(".superhero-form");
 form.addEventListener("submit", function (e) {
