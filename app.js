@@ -251,6 +251,18 @@ class StoreSuperhero {
       list.addSuperhero(superhero);
     });
   }
+
+  static removeSuperhero(clickedSuperhero) {
+    const superheroesList = StoreSuperhero.getSuperhero();
+
+    superheroesList.forEach((superhero, index) => {
+      if (superhero.superheroName === clickedSuperhero) {
+        superheroesList.splice(index, 1);
+      }
+    });
+
+    localStorage.setItem("superheroes", JSON.stringify(superheroesList));
+  }
 }
 
 // -=-=-=--=--=-=-=-=-=-=-=-=-=-=-=-=-===-- EVENTS =-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
