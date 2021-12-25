@@ -202,6 +202,26 @@ class SuperheroList {
       document.querySelector("#power").value,
     ] = ["", "", ""];
   }
+
+  validationError() {
+    document.querySelector(".validate-error").classList.add("show-validation");
+    setTimeout(() => {
+      document
+        .querySelector(".validate-error")
+        .classList.remove("show-validation");
+    }, 2500);
+  }
+
+  validationSuccess() {
+    document
+      .querySelector(".validate-success")
+      .classList.add("show-validation");
+    setTimeout(() => {
+      document
+        .querySelector(".validate-success")
+        .classList.remove("show-validation");
+    }, 1500);
+  }
 }
 
 // -=-=-=--=--=-=-=-=-=-=-=-=-=-=-=-=-===-- EVENTS =-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-

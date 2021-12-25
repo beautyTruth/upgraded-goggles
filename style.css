@@ -160,18 +160,41 @@ i {
 .validate-success {
   line-height: 130px;
   background-color: rgba(55, 136, 37, 0.9);
-  display: none;
+  /* display: block; */
+  opacity: 0;
+  visibility: hidden;
 }
 
 .validate-error {
-  display: none;
+  /* display: block; */
   background-color: rgba(136, 58, 37, 0.9);
+  opacity: 0;
+  visibility: hidden;
 }
 
 .show-validation {
-  display: block;
+  /* display: block; */
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.25s;
+  /* animation: validation 2.5; */
 }
 
 .remove-superhero {
   display: none;
 }
+
+/* @keyframes validation {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  0% {
+    opacity: 0;
+  }
+} */
